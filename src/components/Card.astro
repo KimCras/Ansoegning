@@ -1,0 +1,33 @@
+---
+import Heading from "../components/Heading.astro";
+
+const {
+  heading = "Default Heading",
+  stylingclasses = "",
+} = Astro.props;
+---
+
+<div class:list={["relative bg-off-white p-5 shadow-lg border border-blue rounded-s flex flex-col h-full text-lg", stylingclasses]}>
+  <!-- Tape image always at top -->
+  <img 
+    src="/img/tape1.webp" 
+    alt="Tape decoration" 
+    class="absolute -top-15 left-1/2 -translate-x-1/2 w-60 h-auto rotate-[-2deg]S z-10"
+  />
+
+  <!-- Heading -->
+  <Heading
+    htmlheading="h2"
+    size="medium"
+    font="oswald"
+    weight="bold"
+    stylingclasses="mt-10 text-blue underline text-center"
+  >
+    {heading}
+  </Heading>
+
+  <!-- Content grows to fill card height -->
+  <div class="flex-1 mt-4 font-oswald text-gray-700 space-y-4">
+    <slot />
+  </div>
+</div>

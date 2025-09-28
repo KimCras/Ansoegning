@@ -1,0 +1,47 @@
+---
+const {
+  htmlheading = "h2",
+  size = "medium",
+  font = "oswald",
+  weight = "normal",   // 👈 new prop
+  stylingclasses = ""
+} = Astro.props;
+
+const Htmlheading = htmlheading;
+
+// Tailwind classes for different sizes with responsive adjustments
+const sizeClasses = {
+  "xl-large": "text-4xl md:text-6xl lg:text-[550px] text-blue",
+  "large": "text-3xl md:text-5xl lg:text-7xl text-blue",
+  "medium": "text-xl md:text-xl lg:text-2xl text-blue",
+  "small": "text-sm md:text-base lg:text-lg text-blue",
+};
+
+// Font utility classes (based on your custom fonts)
+const fontClasses = {
+  "bangers": "font-bangers",
+  "oswald": "font-oswald",
+};
+
+// Weight utility classes
+const weightClasses = {
+  "light": "font-light",
+  "normal": "font-normal",
+  "medium": "font-medium",
+  "semibold": "font-semibold",
+  "bold": "font-bold",
+  "extrabold": "font-extrabold",
+  "black": "font-black",
+};
+---
+
+<Htmlheading
+  class:list={[
+    sizeClasses[size],
+    fontClasses[font],
+    weightClasses[weight],
+    stylingclasses
+  ]}
+>
+  <slot />
+</Htmlheading>
