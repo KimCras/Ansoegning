@@ -1,0 +1,9 @@
+---
+const { stylingclasses = "" } = Astro.props;
+---
+
+<p
+  class:list={["inline-block bg-white font-oswald text-gray-700 space-y-4 p-2 mb-2 border border-blue rounded-full font-normal text-center", stylingclasses]}
+>
+  <slot />
+</p>

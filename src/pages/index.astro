@@ -2,12 +2,14 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from '../components/Card.astro';
 import Heading from '../components/Heading.astro';
+import Tool from '../components/Tool.astro';
 ---
 
 <MainLayout title="This is me, alright">
+
 <section class="relative w-full flex justify-center items-center overflow-hidden mt-10">
   <!-- Big display text behind -->
-  <h1 class="absolute text-[180px] md:text-[350px] lg:text-[500px] font-bangers text-blue select-none pointer-events-none z-0">
+  <h1 class="absolute text-[180px] md:text-[350px] lg:text-[500px] font-bangers text-blue animate-lightspeed-left">
     KIMMY
   </h1>
 
@@ -15,14 +17,18 @@ import Heading from '../components/Heading.astro';
   <div class="relative z-10 w-3/4 md:w-2/3 lg:w-1/2">
     <!-- Hero image -->
     <img src="/img/speechnkimmy.png" alt="Hero Image" class="w-full h-auto rounded-lg shadow-xl" />
+	<img src="/img/stars.svg" alt="stars moving" class=" max-w-10 md:max-w-20 absolute top-[33%] left-[75%] -translate-x-1/2 -translate-y-1/2 animate-wiggle animate-infinite animate-ease-out animate-normal animate-fill-forwards animate-duration-[3000ms]">
 
-    <!-- Speech bubble text -->
-<p class="absolute top-[14%] left-[19%] -translate-x-1/2 -translate-y-1/2
-           w-[35%] text-[2vw] md:text-[1.3vw] lg:text-[1.2vw]
-           font-oswald text-blue text-center leading-snug">
-  Hej! Mit navn er Kimberly, men I kan bare kalde mig Kimmy
+<p class="absolute top-[12%] left-[19%] -translate-x-1/2 -translate-y-1/2
+          w-[40%] md:w-[45%] lg:w-[45%] font-oswald text-blue text-center leading-snug">
+  <!-- First small word -->
+  <span class="typing first">Hej! </span>
+  <!-- Rest of first line -->
+  <span class="typing second">mit navn er Kimberly,</span>
+  <br />
+  <!-- Second line -->
+  <span class="typing third">men I kan bare kalde mig Kimmy</span>
 </p>
-
   </div>
 </section>
 
@@ -30,7 +36,7 @@ import Heading from '../components/Heading.astro';
 
 <main class="px-4 mx-1 lg:w-full lg:max-w-7/10 lg:mx-auto">
   <!-- Cards Section -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4  mb-5">
     <!-- Interests Card -->
     <Card heading="MINE INTERESSER">
       <ul class="flex flex-col gap-4">
@@ -55,14 +61,36 @@ import Heading from '../components/Heading.astro';
           <span class="flex-1">Hækling og håndarbejde</span>
         </li>
       </ul>
+	  <p>Jeg er også selv vild med koreansk makeup og skincare – faktisk stod jeg i kø på åbningsdagen, da Dubbu slog dørene op i København! Så det er særligt motiverende at kunne arbejde med et brand, jeg i forvejen følger og bruger :)</p>
     </Card>
 
     <!-- About / Skills Card -->
-    <Card heading="VISUEL SKABER UNDER UDVIKLING">
-      <p>Jeg er en multimediedesignstuderende på 3. semester og søger en praktikplads, hvor jeg kan udfolde mine kreative sider og samtidig få hands-on erfaring fra en rigtig virksomhed. Jeg elsker at kombinere det legende og visuelle med en struktureret og effektiv tilgang til design.</p>
-      <p>Jeg arbejder rutineret i Adobe Photoshop, Illustrator og Visual Studio Code, og har tekniske færdigheder inden for prototyping i Figma samt user testing. Jeg har desuden kendskab til lidt Premiere Pro, Tailwind CSS og GSAP. Mine skoleprojekter har spændt bredt fra UI/UX-design til grafisk design af hjemmesider, og fokuserer på at forbedre accesibiliteten for alle.</p>
-      <p>I mit praktikophold ønsker jeg at få indblik i, hvordan designprocesser foregår i en professionel kontekst, og hvordan jeg bedst kan udvikle mig inden for især UI/UX-design. Jeg ser det som en oplagt mulighed for både at lære nyt og bidrage med mine egne kompetencer og idéer.</p>
+    <Card heading="DESIGNER UNDER UDVIKLING">
+      <p>Jeg er en multimediedesignstuderende på 3. semester med erfaring inden for UI/UX, grafisk design og digitale projekter med fokus på brugervenlighed og tilgængelighed. Jeg elsker at arbejde hands-on og finde kreative løsninger, hvor jeg kan kombinere det legende og visuelle med en struktureret og effektiv tilgang til design.</p>
+      <p>Mit fokus i studiet har mest været på web- og digitalt design, men jeg er super nysgerrig på at lære mere om digital marketing og content. Jeg tror, det kunne være spændende at prøve kræfter med opgaver som SoMe og SEO, og jeg ser en praktik hos Dubbu som en mulighed for at udfordre mig selv og samtidig bidrage med mine kreative idéer.</p>
+      <p>Det jeg vil få ud af mit praktik, er at få indsigt i hvordan contentproduktion fungerer i praksis, og hvordan man skaber engagement på sociale medier. Jeg ser frem til at bidrage med idéer, energi og kreativitet fra dag ét, og til at lære af et dedikeret team i et dynamisk og kreativt miljø.</p>
     </Card>
+  </section>
+
+  <section class="relative bg-off-white shadow-lg border border-blue rounded-s">
+  <Heading htmlheading="h2" size="medium" font="oswald" weight="bold" stylingclasses=" text-blue underline p-5">TOOLS JEG HAR ARBEJDET MED</Heading>
+  <div class="pb-5 pl-5 pr-5">
+  <Tool>Figma</Tool>
+<Tool>Visual Studio Code (HTML, CSS og JS)</Tool>
+<Tool>Adobe Photoshop</Tool>
+<Tool>Adobe Illustrator</Tool>
+<Tool>Tailwind CSS</Tool>
+<Tool>Adobe Premiere Pro</Tool>
+<Tool>Adobe After Effects</Tool>
+<Tool>Adobe Lightroom</Tool>
+<Tool>Astro</Tool>
+<Tool>Clip Studio Paint</Tool>
+<Tool>Inspector</Tool>
+<Tool>Github</Tool>
+<Tool>Canva</Tool>
+<Tool>Netlify</Tool>
+</div>
+
   </section>
   </main>
 </MainLayout>
